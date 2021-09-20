@@ -15,9 +15,7 @@ async function bootstrap() {
 
   app.useGlobalPipes(new ValidationPipe());
   app.enableCors({
-    origin:
-      'http://localhost:3000' ||
-      'https://user-crud-2dddzcyel-3salles.vercel.app',
+    origin: 'https://user-crud-2dddzcyel-3salles.vercel.app',
   });
 
   await app.listen(process.env.PORT || 3001);
