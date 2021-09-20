@@ -17,59 +17,31 @@
 ## 🗂 Table of Contents
 
 * [About the Project](#book-about-the-project)
-  * [Layout](#art-layout)
   * [Technologies](#computer-technologies)
-  * [Features](#sparkles-features)
 * [Installation](#bricks-installation)
   * [Prerequisites](#construction-prerequisites)
   * [Front-end](#lipstick-front-end)
-    * [Installing Dependencies](#construction-installing-dependencies)
-    * [Setting Front-end](#wrench-setting-front-end)
-    * [Running Front-end](#arrow_forward-running-front-end)
   * [Back-end](#file_cabinet-back-end)
     * [Installing Dependencies](#construction-installing-dependencies)
     * [Setting Back-end](#wrench-setting-back-end)
     * [Running Back-end](#arrow_forward-running-back-end)
-  * [Mobile](#iphone-back-end)
-    * [Installing Dependencies](#construction-installing-dependencies)
-    * [Running Mobile](#arrow_forward-running-mobile)
 * [License](#page_facing_up-license)
 * [Author](#woman_technologist-author)
 
 ## :book: About The Project
 
-Happy is a website created in Next Level Week #3 powered by Rockeseat. This site connect people who want to visit orphanages.
-The application allows orphanages self register, informing opening hours, rules and location. And user can make a appointment to visit children and see the orphanages' location.
-
-<p align="center">
-  <img src="https://user-images.githubusercontent.com/62452619/96357353-2df25e80-10d1-11eb-9e8f-2f2f8930bc2d.png" width="50%" alt="Landing page" /> 
-</p>
-
-### :art: Layout
-
-You can acess the project's layout in links below:
-
-* [Desktop](https://www.figma.com/file/mDEbnoojksG4w8sOxmudh3/Happy-Web/duplicate)
-* [Mobile](https://www.figma.com/file/X27FfVxAgy9f5IFa7ONlph/Happy-Mobile/duplicate)
-
-🚨 You need have a [Figma](https://www.figma.com) account to acess the layout.
+It was proposed to create a CRUD of users with the following information: name, date of birth, photo using a MySQL database and Nodejs backend project.
 
 ### :computer: Technologies
 
 * [TypeScript](https://www.typescriptlang.org)
 * [Node.js](https://nodejs.org/en/)
 * [Yarn](https://yarnpkg.com)
-* [Express](https://expressjs.com)
-* [Mapbox](https://www.mapbox.com)
+* [Axios](https://axios-http.com/docs/intro)
 * [TypeORm](https://typeorm.io#/)
-* [SQLite](https://www.sqlite.org/index.html)
-* [Axios](https://www.npmjs.com/package/axios)
-* [Expo](https://expo.io)
-
-### :sparkles: Features
-
-  - [x] Desktop Version
-  - [x] Mobile Version
+* [MySQL](https://www.mysql.com)
+* [Nestjs](https://nestjs.com)
+* [Prisma](https://www.prisma.io)
 
 ## :bricks: Installation
 
@@ -80,127 +52,68 @@ This project use [Node.js](https://nodejs.org/en/) and [Yarn](https://yarnpkg.co
 Clone this project repository:
 ```bash
 
-$ git clone https://github.com/3salles/Happy.git
+$ git clone https://github.com/3salles/develcode-back.git
 
-#Enter in `Happy` folder:
+# Enter in `develcode-back` folder:
 
-$ cd Happy
+$ cd develcode-back
 ```
 
 🚨 If you don't have git in your machine, you can install it [here](https://git-scm.com/downloads).
 
 ## :lipstick: Front-end
 
-### :construction: Installing Dependencies
+You can see how to use the backend project going to its repository [here](https://github.com/3salles/user-crud)
 
-In Happy folder, open `web` folder:
+🚨 This is using a deployed frontend link into [Vercel](https://vercel.com). If you want to run the frontend locally, remember to change in `main.ts` the following line:
 
-```bash
-$ cd web
-
-# And install dependencies by the following command:
-
-$ yarn install
+```ts
+app.enableCors({
+    origin: 'http://localhost:3000',
+  });
 ```
-
-### :wrench: Setting Front-end
-
-To use [Mapbox](https://www.mapbox.com) you must have a Token acess. Create a account and take your token acess. Go to `OrphanagesMap.tsx` and change `REACT_APP_MAPBOX_TOKEN` with you token acess in the following line:
-
-```TypeScript
-<TileLayer url={`https://api.mapbox.com/styles/v1/mapbox/outdoors-v11/tiles/256/{z}/{x}/{y}@2x?access_token=${process.env.REACT_APP_MAPBOX_TOKEN}`} />
-```
-
-### :arrow_forward: Running Front-end
-
-Run the following comand to see the application:
-
-```bash
-$ yarn start
-```
-
-The application will be avaible on `http://localhost:3000/`.
-
-🚨 Remember to start the backend!
 
 ## :file_cabinet: Back-end
 
 ### :construction: Instalando Dependências
 
-Inside Happy folder, open `backend` folder:
+Inside develcode-back folder, install dependencies with following comand:
 
 ```bash
-$ cd backend
-
-# Install dependencies woth following comand:
-
 $ yarn install
 ```
 
 ### :wrench: Setting Back-end
 
-Create database tables with following comand:
+Create a `.env` document into the root project:
 
 ```bash
-$ yarn typeorm migration:run
+$ touch .env
 
-# If you want to drop the database tables:
+# And add a database url
 
-$ yarn typeorm migration:revert
+DATABASE_URL="mysql://DB_USER:DB_PASSWORD@localhost:3306/develcode"
+```
+
+Create database tables with following command:
+
+```bash
+$ yarn prisma migrate dev
 ```
 
 ### :arrow_forward: Running Back-end
 
-Run following comand to start back-end:
+Run following command to start back-end:
 
 ```bash
-$ yarn dev
+$ yarn start:dev
 ```
 
-The Application will be avaible on `http://localhost:3333/`.
+The Application will be avaible on `http://localhost:3001/`.
 
-:warning: Modify `LOCALHOST` variable address to  your network address in `images_views.ts` archive:
+### :page_facing_up: License
 
-```TypeScript
-    return {
-      id: image.id,
-      url: `http://LOCALHOST:3333/uploads/${image.path}`,
-    };
-```
-
-## :iphone: Mobile
-
-This project uses [Expo](https://expo.io), install it before go to next step.
-
-### :construction: Installing Dependencies
-
-Inside Happy folder,open `mobile` folder:
-
-```bash
-$ cd mobile
-
-# Install dependencies with following comand:
-
-$ yarn install
-```
-
-### :arrow_forward: Running Mobile
-
-Run mobile with following comand:
-
-```bash
-$ expo start
-
-# If you want to use yarn:
-
-$ yarn start
-```
-
-The application will open a window in your browser. If you want to use your mobile to run the application, just use the QR code. If you want to run in your desktop, read how to use [Android](https://docs.expo.io/workflow/android-studio-emulator/) emulator or [iOS](https://docs.expo.io/workflow/ios-simulator/) emulator.
-
-## :page_facing_up: License
-
-This project uses [MIT](https://github.com/3salles/Happy/blob/main/LICENSE) lincense.
+This project uses [MIT](https://github.com/3salles/develcode-back/blob/main/LICENSE) lincense.
 
 ## :woman_technologist: Author
 <p align="center">
