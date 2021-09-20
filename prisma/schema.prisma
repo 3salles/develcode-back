@@ -13,7 +13,7 @@ generator client {
 model User{
   Codigo String @id @default(uuid())
   Nome String 
-  Dtnasci DateTime @default(now())
+  Dtnasci String
   Foto String
 
   @@map("user")

@@ -5,14 +5,12 @@ import { UpdateUserDto } from './dto/update-user.dto';
 
 @Injectable()
 export class UserService {
- 
   constructor(private readonly prisma: PrismaService) {}
- 
+
   create(createUserDto: CreateUserDto) {
     return this.prisma.user.create({
-      data: createUserDto
-    })
-
+      data: createUserDto,
+    });
   }
 
   findAll() {
@@ -22,25 +20,25 @@ export class UserService {
   findOne(id: string) {
     return this.prisma.user.findUnique({
       where: {
-        Codigo: id
-      }
+        Codigo: id,
+      },
     });
   }
 
   update(id: string, updateUserDto: UpdateUserDto) {
     return this.prisma.user.update({
       where: {
-        Codigo: id
+        Codigo: id,
       },
-      data: updateUserDto
+      data: updateUserDto,
     });
   }
 
   remove(id: string) {
     return this.prisma.user.delete({
       where: {
-        Codigo: id
-      }
+        Codigo: id,
+      },
     });
   }
 }

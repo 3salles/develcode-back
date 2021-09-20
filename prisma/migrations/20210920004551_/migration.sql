@@ -2,7 +2,7 @@
 CREATE TABLE `user` (
     `Codigo` VARCHAR(191) NOT NULL,
     `Nome` VARCHAR(191) NOT NULL,
-    `Dtnasci` DATETIME(3) NOT NULL DEFAULT CURRENT_TIMESTAMP(3),
+    `Dtnasci` VARCHAR(191) NOT NULL,
     `Foto` VARCHAR(191) NOT NULL,
 
     PRIMARY KEY (`Codigo`)

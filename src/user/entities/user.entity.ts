@@ -1,7 +1,7 @@
-import { Prisma } from ".prisma/client";
+import { Prisma } from '.prisma/client';
 
-export class User implements Prisma.UserUncheckedCreateInput{    
-    Nome: string;
-    Dtnasci: Date;
-    Foto: string;
+export class User implements Prisma.UserUncheckedCreateInput {
+  Nome: string;
+  Dtnasci: string;
+  Foto: string;
 }
