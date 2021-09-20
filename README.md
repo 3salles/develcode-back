@@ -42,6 +42,7 @@ It was proposed to create a CRUD of users with the following information: name, 
 * [MySQL](https://www.mysql.com)
 * [Nestjs](https://nestjs.com)
 * [Prisma](https://www.prisma.io)
+* [Swagger](https://swagger.io)
 
 ## :bricks: Installation
 
@@ -110,6 +111,8 @@ $ yarn start:dev
 ```
 
 The Application will be avaible on `http://localhost:3001/`.
+
+🚨 You can see all routes and params of this project accessing `http://localhost:3001/` or `https://develcode-back.herokuapp.com/api/`.
 
 ### :page_facing_up: License
 
