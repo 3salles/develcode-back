@@ -11,10 +11,10 @@ generator client {
 }
 
 model User{
-  Codigo String @id @default(uuid())
-  Nome String 
-  Dtnasci String
-  Foto String
+  code String @id @default(uuid())
+  name String 
+  birth String
+  avatar String
 
   @@map("user")
 }

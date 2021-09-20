@@ -20,7 +20,7 @@ export class UserService {
   findOne(id: string) {
     return this.prisma.user.findUnique({
       where: {
-        Codigo: id,
+        code: id,
       },
     });
   }
@@ -28,7 +28,7 @@ export class UserService {
   update(id: string, updateUserDto: UpdateUserDto) {
     return this.prisma.user.update({
       where: {
-        Codigo: id,
+        code: id,
       },
       data: updateUserDto,
     });
@@ -37,7 +37,7 @@ export class UserService {
   remove(id: string) {
     return this.prisma.user.delete({
       where: {
-        Codigo: id,
+        code: id,
       },
     });
   }

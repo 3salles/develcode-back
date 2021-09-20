@@ -4,11 +4,11 @@ import { CreateUserDto } from './create-user.dto';
 
 export class UpdateUserDto extends PartialType(CreateUserDto) {
   @ApiProperty()
-  Nome: string;
+  name: string;
 
   @ApiProperty()
-  Dtnasci: string;
+  birth: string;
 
   @ApiProperty()
-  Foto: string;
+  avatar: string;
 }
